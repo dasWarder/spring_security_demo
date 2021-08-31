@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: dasWarder
+      changes:
+        - tagDatabase:
+            - tag: v_1_create_table
+        - sqlFile:
+            endDelimiter: \nGO
+            splitStatement: true
+            path: classpath:db.changelog/v1/v1_create_dev_table_0.0.1.sql
+      rollback:
+        - sqlFile:
+            path: classpath:db.changelog/v1/rollback/v1_drop_dev_table_0.0.1.sql
+  - changeSet:
+      id: 2
+      author: dasWarder
+      changes:
+        - tagDatabase:
+            - tag: v1_populate_table
+        - sqlFile:
+            endDelimiter: \nGo
+            splitStatement: true
+            path: classpath:db.changelog/v1/v1_populate_dev_table_0.0.2.sql
+      rollback:
+        - sqlFile:
+            path: classpath:db.changelog/v1/rollback/v1_clean_dev_table_0.0.2.sql
+

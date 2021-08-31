@@ -1,11 +1,15 @@
 spring:
   datasource:
-    username: user
-    password: password
-    url: jdbc:mysql://localhost:9898/developer
+    username: warder
+    password: warder_password
+    url: jdbc:mysql://localhost:3306/developer
     driver-class-name: com.mysql.jdbc.Driver
 
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.yml

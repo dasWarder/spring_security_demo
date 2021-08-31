@@ -1,0 +1,5 @@
+CREATE TABLE developers(
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(128) NOT NULL,
+    last_name VARCHAR(128) NOT NULL
+);
