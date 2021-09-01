@@ -39,7 +39,7 @@ public class DeveloperControllerV1 {
     }
 
     @PostMapping
-    public ResponseEntity<Developer> saveDeveloper(Developer developer) {
+    public ResponseEntity<Developer> saveDeveloper(@RequestBody Developer developer) {
         log.info("Save a new developer");
 
         Developer storedDeveloper = developerRepository.save(developer);
